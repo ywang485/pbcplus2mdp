@@ -1,0 +1,88 @@
+astep(0..m-1).
+step(0..m).
+boolean(t; f).
+turkey(slimTurkey; fatTurkey).
+
+%% UEC
+:- fl_alive(T, t, I), fl_alive(T, f, I).
+:- not fl_alive(T, t, I), not fl_alive(T, f, I), step(I), turkey(T).
+:- fl_escaped(T, t, I), fl_escaped(T, f, I).
+:- not fl_escaped(T, t, I), not fl_escaped(T, f, I), step(I), turkey(T).
+:- fl_loaded(t, I), fl_loaded(f, I).
+:- not fl_loaded(t, I), not fl_loaded(f, I), step(I).
+:- act_fire(T, t, I), act_fire(T, f, I).
+:- not act_fire(T, t, I), not act_fire(T, f, I), astep(I), turkey(T).
+:- act_load(t, I), act_load(f, I).
+:- not act_load(t, I), not act_load(f, I), astep(I).
+:- pf_turkeyKilled(T, t, I), pf_turkeyKilled(T, f, I).
+:- not pf_turkeyKilled(T, t, I), not pf_turkeyKilled(T, f, I),
+    astep(I), turkey(T).
+:- pf_escape(t, I), pf_escape(f, I).
+:- not pf_escape(t, I), not pf_escape(f, I), 
+    astep(I), turkey(T).
+
+:- pf_initAlive(T, t), pf_initAlive(T, f).
+:- not pf_initAlive(T, t), not pf_initAlive(T, f), turkey(T).
+:- pf_initLoaded(t), pf_initLoaded(f).
+:- not pf_initLoaded(t), not pf_initLoaded(f).
+:- pf_initEscaped(T, t), pf_initEscaped(T, f).
+:- not pf_initEscaped(T, t), not pf_initEscaped(T, f), turkey(T).
+
+
+% ---------- INIT(D) ------------
+@log(0.5) pf_initAlive(T, t) :- turkey(T).
+@log(0.5) pf_initAlive(T, f) :- turkey(T).
+@log(0.5) pf_initEscaped(T, t) :- turkey(T).
+@log(0.5) pf_initEscaped(T, f) :- turkey(T).
+@log(0.5) pf_initLoaded(t).
+@log(0.5) pf_initLoaded(f).
+
+:- not fl_alive(T, B, 0), pf_initAlive(T, B).
+:- not fl_loaded(B, 0), pf_initLoaded(B).
+:- not fl_escaped(T, B, 0), pf_initEscaped(T, B).
+
+% ---------- PF(D) ----------
+%% Probability Distribution
+@log(0.6) pf_turkeyKilled(slimTurkey, t, I) :- astep(I).
+@log(0.4) pf_turkeyKilled(slimTurkey, f, I) :- astep(I).
+@log(0.9) pf_turkeyKilled(fatTurkey, t, I) :- astep(I).
+@log(0.1) pf_turkeyKilled(fatTurkey, f, I) :- astep(I).
+@log(0.5) pf_escape(t, I) :- astep(I).
+@log(0.5) pf_escape(f, I) :- astep(I).
+
+%% Static Laws
+:- fl_alive(T, f, I), fl_escaped(T, t, I).
+
+%% Fluent Dynamic Laws
+fl_loaded(t, I+1) :- act_load(t, I), astep(I).
+fl_alive(T, f, I+1) :- fl_loaded(t, I), act_fire(T, t, I), fl_escaped(T, f, I),
+    pf_turkeyKilled(T, t, I), astep(I).
+fl_loaded(f, I+1) :- act_fire(T, t, I).
+fl_escaped(T, t, I+1) :- fl_alive(T1, f, I), fl_alive(T, t, I), 
+    pf_escape(t, I), not fl_escaped(T, t, I), T1 != T.
+
+{fl_alive(T, B, I+1)} :- fl_alive(T, B, I), astep(I), boolean(B), turkey(T).
+{fl_escaped(T, B, I+1)} :- fl_escaped(T, B, I), astep(I), boolean(B), turkey(T).
+{fl_loaded(B, I+1)} :- fl_loaded(B, I), astep(I), boolean(B).
+
+%% Utility Laws
+utility(10, I) :- fl_alive(fatTurkey, f, I+1), fl_alive(fatTurkey, t, I), astep(I).
+utility(8, I) :- fl_alive(slimTurkey, f, I+1), fl_alive(slimTurkey, t, I), astep(I).
+
+%% Initial State and Actions are Random
+{fl_alive(T, B, 0)} :- turkey(T), boolean(B).
+{fl_loaded(B, 0)} :- boolean(B).
+{fl_escaped(T, B, 0)} :- turkey(T), boolean(B).
+{act_load(B, I)} :- boolean(B), astep(I).
+{act_fire(T, B, I)} :- turkey(T), boolean(B), astep(I).
+
+
+%% No Concurrency
+:- act_fire(T1, t, I), act_fire(T2, t, I), astep(I), T1 != T2,
+    turkey(T1), turkey(T2).
+:- act_load(t, I), act_fire(T, t, I).
+
+% Initial State
+%:- not fl_alive(T, t, 0), turkey(T).
+%:- not fl_loaded(f, 0).
+%:- not fl_escaped(T, f, 0), turkey(T).
