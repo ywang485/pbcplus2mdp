@@ -2,7 +2,7 @@ astep(0..m-1).
 step(0..m).
 boolean(t; f).
 
-block(b1; b2).
+block(b1; b2; b3).
 location(l1; l2).
 
 %% UEC
@@ -58,10 +58,10 @@ fl_TopClear(X, f, I) :- fl_OnTopOf(X1, X, t, I).
 fl_TopClear(X, t, I) :- not fl_TopClear(X, f, I), block(X), step(I).
 
 %% Fluent Dynamic Laws
-fl_At(X, L, I+1) :- act_MoveTo(X, L, t, I), pf_Move(t, I), fl_GoalNotAchieved(t, I).
-fl_OnTopOf(X1, X2, t, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I), fl_GoalNotAchieved(t, I).
-fl_OnTopOf(X1, X2, f, I+1) :- act_MoveTo(X1, L2, t, I), pf_Move(t, I), fl_At(X1, L1, I), fl_OnTopOf(X1, X2, t, I), L1 != L2,  fl_GoalNotAchieved(t, I).
-fl_OnTopOf(X1, X, f, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I), fl_OnTopOf(X1, X, t, I), X != X2, fl_GoalNotAchieved(t, I).
+fl_At(X, L, I+1) :- act_MoveTo(X, L, t, I), pf_Move(t, I).
+fl_OnTopOf(X1, X2, t, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I).
+fl_OnTopOf(X1, X2, f, I+1) :- act_MoveTo(X1, L2, t, I), pf_Move(t, I), fl_At(X1, L1, I), fl_OnTopOf(X1, X2, t, I), L1 != L2.
+fl_OnTopOf(X1, X, f, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I), fl_OnTopOf(X1, X, t, I), X != X2.
 {fl_OnTopOf(X1, X2, B, I+1)} :- fl_OnTopOf(X1, X2, B, I), astep(I), boolean(B).
 {fl_At(X, L, I+1)} :- fl_At(X, L, I), astep(I), boolean(B).
 
