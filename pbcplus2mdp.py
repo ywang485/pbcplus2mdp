@@ -9,6 +9,7 @@ fluentPrefix = 'fl_'
 actionPrefix = 'act_'
 action_project_file_name = 'tmp_action_project.lp'
 additional_constraint_file_name = 'tmp_constraint.lp'
+state_action_mapping_file_name = 'tmp_state_action_mapping.lp'
 predicateArityDivider = '$'
 
 states = {}
@@ -131,34 +132,93 @@ def makeTransitionsStochastic():
 					s[i] = 1 - sum(s[:i])
 					break
 
-def constructTransitionProbabilitiesAndTransitionReward():
-	state_definitions = ''
-	# Create definition for each state at timestep 1
-	for s_idx in states:
-		state_definitions += 'end_state(' + str(s_idx) + ') :- ' + model2conjunction(setTimestep(states[s_idx], 1)) + '.\n'
+def extractTransitionInfo(answerSets):
+	transition_dict = {}
+	i = 1
+	for a in answerSets:
+		ss = -1
+		es = -1
+		act = -1
+		for atom in a:
+			if atom.name == 'start_state':
+				ss = atom.arguments[0].number
+			elif atom.name == 'end_state':
+				es = atom.arguments[0].number
+			elif atom.name == 'action_idx':
+				act = atom.arguments[0].number
+		k = str(ss) + ';' + str(es) + ';' + str(act)
+		if k not in transition_dict:
+			transition_dict[k] = [i]
+		else:
+			transition_dict[k].append(i)
+		i += 1
+	return transition_dict
 
+def extractProbs(rawOutput):
+	prob_dict = {}
+	txt = rawOutput.split('Optimization: ')[-1]
+	probabilityTexts = [x.split('\n')[0] for x in txt.split('Probability of Answer ')[1:]]
+	for p in probabilityTexts:
+		idx = int(p.split(' ')[0].lstrip('(').rstrip(')'))
+		prob = float(p.split(' : ')[1])
+		prob_dict[idx] = prob
+	return prob_dict
+
+def getTransitionProbability(s0, s1, act, transition_dict, prob_dict):
+	k = str(s0) + ';' + str(s1) + ';' + str(act)
+	if k not in transition_dict:
+		return 0.0
+	else:
+		# Compute denomonator
+		d = 0.0
+		for sp in states:
+			kp = str(s0) + ';' + str(sp) + ';' + str(act)
+			if kp in transition_dict:
+				for a in transition_dict[str(s0) + ';' + str(sp) + ';' + str(act)]:
+					 d += prob_dict[a]
+		return sum([prob_dict[x] for x in transition_dict[k]])/d
+
+def getTransitionReward(s0, s1, act, transition_dict, answer_sets):
+	k = str(s0) + ';' + str(s1) + ';' + str(act)
+	if k not in transition_dict:
+		return 0
+	else:
+		s, u = extractEndStateAndUtilityFromModel(answer_sets[transition_dict[k][0]-1])
+	return u
+
+def constructTransitionProbabilitiesAndTransitionReward():
+	state_action_definitions = ''
+	# Create definition for each transitions
+	for s_idx in states:
+		state_action_definitions += 'end_state(' + str(s_idx) + ') :- ' + model2conjunction(setTimestep(states[s_idx], 1)) + '.\n'
+		state_action_definitions += 'start_state(' + str(s_idx) + ') :- ' + model2conjunction(setTimestep(states[s_idx], 0)) + '.\n'
+	for a_idx in range(len(actions)):
+		state_action_definitions += 'action_idx(' +str(a_idx)+ ') :- ' + model2conjunction(setTimestep(actions[a_idx], 0)) + '.\n'
+	out = open(state_action_mapping_file_name, 'w')
+	out.write(state_action_definitions)
+	out.close()
+	
+	# Solve Tr(D, 1) once and collect output
+	rawOutput = runLPMLNProgram(program, '-e '+ state_action_mapping_file_name  + ' -all -clingo="-c m=1"')
+	rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
+	answerSets = [getModelFromText(x) for x in rawAnswerSets]
+	transition_dict = extractTransitionInfo(answerSets)
+	prob_dict = extractProbs(rawOutput)
+	print transition_dict
+	print prob_dict
+
+	# Construct transition probabilities and rewards
 	for a_idx in range(len(actions)):
 		transition_probs.append([])
 		transition_rwds.append([])
 		for s_idx in range(len(states)):
-			out = open(additional_constraint_file_name, 'w')
-			out.write(state_definitions)
-			out.write(model2constraints(states[s_idx]))
-			out.write(model2constraints(actions[a_idx]))
-			out.close()
-			rawOutput = runLPMLNProgram(program, '-e '+ additional_constraint_file_name  + ' -all -q end_state -clingo="-c m=1"')
-			rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
-			answerSets = [getModelFromText(x) for x in rawAnswerSets]
 			probs = extractEndStateProbabilitiesFromRawOutput(rawOutput)
 			transition_probs[-1].append([0] * len(states))
 			transition_rwds[-1].append([0] * len(states))
-			for a in answerSets:
-				s, u = extractEndStateAndUtilityFromModel(a)
-				transition_rwds[-1][-1][s.number] = u
-			for p in probs:
-				transition_probs[-1][-1][p] = probs[p]
+			for s1_idx in range(len(states)):
+				transition_probs[a_idx][s_idx][s1_idx] = getTransitionProbability(s_idx, s1_idx, a_idx, transition_dict, prob_dict)
+				transition_rwds[a_idx][s_idx][s1_idx] = getTransitionReward(s_idx, s1_idx, a_idx, transition_dict, answerSets)
 		
-
 # Collect inputs
 program = sys.argv[1]
 time_horizon = int(sys.argv[2])
@@ -170,7 +230,7 @@ constructActions()
 constructTransitionProbabilitiesAndTransitionReward()
 transition_probs = np.array(transition_probs)
 transition_rwds = np.array(transition_rwds)
-makeTransitionsStochastic()
+#makeTransitionsStochastic()
 print str(len(states)) + ' states detected.'
 print str(len(actions)) + ' actions detected.'
 print 'Transition Probabilitities: '
@@ -181,8 +241,15 @@ print 'Transition Rewards: '
 for a_idx in actions:
 	print 'action ' + str(a_idx), model2conjunction(actions[a_idx])
 	print transition_rwds[a_idx]
-fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, 1, time_horizon, True)
+fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, 0.9, time_horizon, True)
 fh.run()
-print 'Optimzal Policy: ', fh.policy
+print 'Raw Optimal Policy Output: \n', fh.policy
+print 'Optimal Policy: '
+for t in range(fh.policy.shape[1]):
+	print '-------------------------- Time step ' + str(t) + ' ---------------------------------:'
+	for s_idx in range(len(fh.policy)):
+		print 'state: ', model2conjunction(states[s_idx])
+		print 'action: ', model2conjunction(actions[fh.policy[s_idx][t]])
+		print '\n'
 
 

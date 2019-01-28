@@ -1,0 +1,75 @@
+astep(0..m-1).
+step(0..m).
+boolean(t; f).
+
+block(b1; b2).
+location(l1; l2).
+
+%% UEC
+:- fl_Above(X1, X2, t, I), fl_Above(X1, X2, f, I).
+:- not fl_Above(X1, X2, t, I), not fl_Above(X1, X2, f, I), block(X1), block(X2), step(I).
+:- fl_TopClear(X, t, I), fl_TopClear(X, f, I).
+:- not fl_TopClear(X, t, I), not fl_TopClear(X, f, I), block(X), step(I).
+:- fl_GoalNotAchieved(t, I), fl_GoalNotAchieved(f, I).
+:- not fl_GoalNotAchieved(t, I), not fl_GoalNotAchieved(f, I), step(I).
+
+:- fl_At(X, L1, I), fl_At(X, L2, I), L1 != L2.
+:- not fl_At(X, l1, I), not fl_At(X, l2, I), block(X), step(I).
+:- fl_OnTopOf(X1, X2, t, I), fl_OnTopOf(X1, X2, f, I).
+:- not fl_OnTopOf(X1, X2, t, I), not fl_OnTopOf(X1, X2, f, I), block(X1), block(X2), step(I).
+
+:- act_StackOn(X1, X2, t, I), act_StackOn(X1, X2, f, I).
+:- not act_StackOn(X1, X2, t, I), not act_StackOn(X1, X2, f, I), block(X1), block(X2), astep(I).
+:- act_MoveTo(X, L, t, I), act_MoveTo(X, L, f, I).
+:- not act_MoveTo(X, L, t, I), not act_MoveTo(X, L, f, I), block(X), location(L),astep(I).
+
+:- pf_Move(t, I), pf_Move(f, I).
+:- not pf_Move(t, I), not pf_Move(f, I), astep(I).
+
+% ---------- PF(D) ----------
+%% Probability Distribution
+@log(0.8) pf_Move(t, I) :- astep(I).
+@log(0.2) pf_Move(f, I) :- astep(I).
+
+%% Initial State and Actions are Random
+{fl_OnTopOf(X1, X2, B, 0)} :- block(X1), block(X2), boolean(B).
+{fl_At(X, L, 0)} :- block(X), location(L), boolean(B).
+{act_StackOn(X1, X2, B, I)} :- block(X1), block(X2), boolean(B), astep(I).
+{act_MoveTo(X, L, B, I)} :- block(X), location(L), boolean(B), astep(I).
+
+%% No Concurrency
+:- act_StackOn(X1, X2, t, I), act_StackOn(X3, X4, t, I), astep(I), X1 != X3.
+:- act_StackOn(X1, X2, t, I), act_StackOn(X3, X4, t, I), astep(I), X2 != X4.
+:- act_MoveTo(X1, L1, t, I), act_MoveTo(X2, L2, t, I), astep(I), X1 != X2.
+:- act_MoveTo(X1, L1, t, I), act_MoveTo(X2, L2, t, I), astep(I), L1 != L2.
+:- act_StackOn(X1, X2, t, I), act_MoveTo(X3, L, t, I), astep(I).
+
+%% Static Laws
+fl_GoalNotAchieved(t, I) :- fl_At(X, L, I), L != l2.
+fl_GoalNotAchieved(f, I) :- not fl_GoalNotAchieved(t, I), step(I).
+:- fl_OnTopOf(X1, X, t, I), fl_OnTopOf(X2, X, t, I), X1 != X2.
+:- fl_OnTopOf(X, X1, t, I), fl_OnTopOf(X, X2, t, I), X1 != X2.
+fl_Above(X1, X2, t, I) :- fl_OnTopOf(X1, X2, t, I).
+fl_Above(X1, X2, t, I) :- fl_Above(X1, X, t, I), fl_Above(X, X2, t, I).
+:- fl_Above(X1, X2, t, I), fl_Above(X2, X1, t, I).
+fl_At(X1, L, I) :- fl_Above(X1, X2, t, I), fl_At(X2, L, I).
+fl_Above(X1, X2, f, I) :- not fl_Above(X1, X2, t, I), block(X1), block(X2), step(I). 
+fl_TopClear(X, f, I) :- fl_OnTopOf(X1, X, t, I).
+fl_TopClear(X, t, I) :- not fl_TopClear(X, f, I), block(X), step(I).
+
+%% Fluent Dynamic Laws
+fl_At(X, L, I+1) :- act_MoveTo(X, L, t, I), pf_Move(t, I), fl_GoalNotAchieved(t, I).
+fl_OnTopOf(X1, X2, t, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I), fl_GoalNotAchieved(t, I).
+fl_OnTopOf(X1, X2, f, I+1) :- act_MoveTo(X1, L2, t, I), pf_Move(t, I), fl_At(X1, L1, I), fl_OnTopOf(X1, X2, t, I), L1 != L2,  fl_GoalNotAchieved(t, I).
+fl_OnTopOf(X1, X, f, I+1) :- act_StackOn(X1, X2, t, I), X1 != X2, fl_TopClear(X2, t, I), not fl_Above(X2, X1, t, I), fl_At(X1, L, I), fl_At(X2, L, I), fl_OnTopOf(X1, X, t, I), X != X2, fl_GoalNotAchieved(t, I).
+{fl_OnTopOf(X1, X2, B, I+1)} :- fl_OnTopOf(X1, X2, B, I), astep(I), boolean(B).
+{fl_At(X, L, I+1)} :- fl_At(X, L, I), astep(I), boolean(B).
+
+%% Utility Laws
+utility(-1, X, L, I) :- act_MoveTo(X, L, t, I).
+utility(10) :- fl_GoalNotAchieved(f, I+1), fl_GoalNotAchieved(t, I).
+
+% Debugging
+%:- not fl_At(b1, l1, 0).
+%:- not fl_At(b2, l1, 0).
+%:- not fl_At(b3, l1, 0).
