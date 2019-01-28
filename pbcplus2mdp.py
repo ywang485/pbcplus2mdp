@@ -3,6 +3,7 @@ import subprocess
 import clingo
 import mdptoolbox
 import numpy as np
+import time
 
 # Configuration
 fluentPrefix = 'fl_'
@@ -204,8 +205,8 @@ def constructTransitionProbabilitiesAndTransitionReward():
 	answerSets = [getModelFromText(x) for x in rawAnswerSets]
 	transition_dict = extractTransitionInfo(answerSets)
 	prob_dict = extractProbs(rawOutput)
-	print transition_dict
-	print prob_dict
+	#print transition_dict
+	#print prob_dict
 
 	# Construct transition probabilities and rewards
 	for a_idx in range(len(actions)):
@@ -223,14 +224,16 @@ def constructTransitionProbabilitiesAndTransitionReward():
 program = sys.argv[1]
 time_horizon = int(sys.argv[2])
 
+start_time = time.time()
 print 'Action Description in lpmln: ', program
 print 'Time Horizon: ', time_horizon
 constructStates()
 constructActions()
+end_time = time.time()
 constructTransitionProbabilitiesAndTransitionReward()
 transition_probs = np.array(transition_probs)
 transition_rwds = np.array(transition_rwds)
-#makeTransitionsStochastic()
+makeTransitionsStochastic()
 print str(len(states)) + ' states detected.'
 print str(len(actions)) + ' actions detected.'
 print 'Transition Probabilitities: '
@@ -241,8 +244,12 @@ print 'Transition Rewards: '
 for a_idx in actions:
 	print 'action ' + str(a_idx), model2conjunction(actions[a_idx])
 	print transition_rwds[a_idx]
+lpmln_solving_time = end_time - start_time
+start_time = time.time()
 fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, 0.9, time_horizon, True)
 fh.run()
+end_time = time.time()
+mdp_solving_time = end_time - start_time
 print 'Raw Optimal Policy Output: \n', fh.policy
 print 'Optimal Policy: '
 for t in range(fh.policy.shape[1]):
@@ -251,5 +258,5 @@ for t in range(fh.policy.shape[1]):
 		print 'state: ', model2conjunction(states[s_idx])
 		print 'action: ', model2conjunction(actions[fh.policy[s_idx][t]])
 		print '\n'
-
-
+print 'lpmln solving time: ', lpmln_solving_time
+print 'MDP solving time:', mdp_solving_time
