@@ -223,6 +223,7 @@ def constructTransitionProbabilitiesAndTransitionReward():
 # Collect inputs
 program = sys.argv[1]
 time_horizon = int(sys.argv[2])
+discount = float(sys.argv[3])
 
 start_time = time.time()
 print 'Action Description in lpmln: ', program
@@ -246,17 +247,28 @@ for a_idx in actions:
 	print transition_rwds[a_idx]
 lpmln_solving_time = end_time - start_time
 start_time = time.time()
-fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, 0.9, time_horizon, True)
-fh.run()
+if time_horizon > 0:
+	fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, discount, time_horizon, True)
+	fh.run()
+else:
+	fh = mdptoolbox.mdp.ValueIteration(transition_probs, transition_rwds, discount)
+	fh.run()
 end_time = time.time()
 mdp_solving_time = end_time - start_time
 print 'Raw Optimal Policy Output: \n', fh.policy
 print 'Optimal Policy: '
-for t in range(fh.policy.shape[1]):
-	print '-------------------------- Time step ' + str(t) + ' ---------------------------------:'
+if time_horizon > 0:
+	for t in range(fh.policy.shape[1]):
+		print '-------------------------- Time step ' + str(t) + ' ---------------------------------:'
+		for s_idx in range(len(fh.policy)):
+			print 'state: ', model2conjunction(states[s_idx])
+			print 'action: ', model2conjunction(actions[fh.policy[s_idx][t]])
+			print '\n'
+else:
 	for s_idx in range(len(fh.policy)):
 		print 'state: ', model2conjunction(states[s_idx])
-		print 'action: ', model2conjunction(actions[fh.policy[s_idx][t]])
+		print 'action: ', model2conjunction(actions[fh.policy[s_idx]])
 		print '\n'
+
 print 'lpmln solving time: ', lpmln_solving_time
 print 'MDP solving time:', mdp_solving_time
