@@ -18,5 +18,7 @@ The folder "examples" contains lpmln encodings for several example pBC+ action d
 
 - bomb.lpmln: Toilet and bomb example as described in [1]. There are two packages, one of which contains a bomb. The bomb can be defused by dunking the package containing the bomb in the toilet. There is a 0.05 probability of the toilet becoming clogged when a package is placed in it. The goal is to defuse the bomb and not get the toilet clogged.
 
+## References
+
 [1] Younes, Håkan LS, and Michael L. Littman. "PPDDL1. 0: An extension to PDDL for expressing planning domains with probabilistic effects." Techn. Rep. CMU-CS-04-162 (2004).
 
