@@ -1,0 +1,59 @@
+astep(0..m-1).
+step(0..m).
+boolean(t; f).
+object(package1; package2).
+
+%% UEC
+:- fl_BombDefused(t, I), fl_BombDefused(f, I).
+:- not fl_BombDefused(t, I), not fl_BombDefused(f, I), step(I).
+:- fl_ToiletClogged(t, I), fl_ToiletClogged(f, I).
+:- not fl_ToiletClogged(t, I), not fl_ToiletClogged(f, I), step(I).
+:- fl_BombInPackage(O, t, I), fl_BombInPackage(O, f, I), object(O).
+:- not fl_BombInPackage(O, t, I), not fl_BombInPackage(O, f, I), object(O), step(I).
+:- act_DunkPackage(O, t, I), act_DunkPackage(O, f, I), object(O).
+:- not act_DunkPackage(O, t, I), not act_DunkPackage(O, f, I), object(O), astep(I).
+:- pf_1(t, I), pf_1(f, I).
+:- not pf_1(t, I), not pf_1(f, I), astep(I).
+:- fl_GoalAchieved(t, I), fl_GoalAchieved(f, I).
+:- not fl_GoalAchieved(t, I), not fl_GoalAchieved(f, I), step(I).
+
+%:- initpf_1(O, t), initpf_1(O, f).
+%:- not initpf_1(O, t), not initpf_1(O, f), object(O).
+
+% ---------- INIT(D) ------------
+%@log(0.5) initpf_1(O, t) :- object(O).
+%@log(0.5) initpf_1(O, f) :- object(O).
+
+%:- not fl_BombInPackage(O, t, 0), initpf_1(O, t).
+%:- not fl_BombDefused(f, 0).
+%:- not fl_ToiletClogged(f, 0).
+
+% ---------- PF(D) ----------
+%% Probability Distribution
+@log(0.05) pf_1(t, I) :- astep(I).
+@log(0.95) pf_1(f, I) :- astep(I).
+
+%% Fluent Dynamic Laws
+fl_BombDefused(t, I+1) :- fl_BombInPackage(O, t, I), act_DunkPackage(O, t, I), fl_GoalAchieved(f, I), astep(I).
+fl_ToiletClogged(t, I+1) :-  act_DunkPackage(O, t, I), fl_GoalAchieved(f, I), pf_1(t, I), asstep(I).
+{fl_BombDefused(B, I+1)} :- fl_BombDefused(B, I), astep(I).
+{fl_ToiletClogged(B, I+1)} :- fl_ToiletClogged(B, I), astep(I).
+{fl_BombInPackage(O, B, I+1)} :- fl_BombInPackage(O, B, I), astep(I).
+
+%% Static Laws
+fl_GoalAchieved(t, I) :- fl_BombDefused(t, I), fl_ToiletClogged(f, I).
+fl_GoalAchieved(f, I) :- not fl_GoalAchieved(t, I), step(I).
+:- fl_BombInPackage(O1, t, I), fl_BombInPackage(O2, t, I), O1 != O2.
+:- not fl_BombInPackage(package1, t, I), not fl_BombInPackage(package2, t, I), step(I).
+
+%% Utility Laws
+utility(1) :- fl_GoalAchieved(t, I+1), fl_GoalAchieved(f, I).
+
+%% Actions and initial value of regular fluents are exogenous
+{fl_BombDefused(B, 0)} :- boolean(B).
+{fl_ToiletClogged(B, 0)} :- boolean(B).
+{fl_BombInPackage(O, B, 0)} :- object(O), boolean(B).
+{act_DunkPackage(O, B, I)} :- object(O), boolean(B), astep(I).
+
+%% No Concurrency
+:- act_DunkPackage(O1, t, I), act_DunkPackage(O2, t, I), O1 != O2.
