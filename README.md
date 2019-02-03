@@ -7,6 +7,7 @@ python pbcplus2mdp.py path/to/lpmln/files time_horizon(0 for infinite) discount_
 
 ## System Dependencies
 This Python script requires the following system to be installed
+- clingo python library: https://github.com/potassco/clingo/blob/master/INSTALL.md
 - lpmln2asp system: http://reasoning.eas.asu.edu/lpmln/index.html
 - MDPToolBox: https://pymdptoolbox.readthedocs.io/en/latest/
 
