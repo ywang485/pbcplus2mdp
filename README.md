@@ -3,7 +3,12 @@
 A python script that translates probabilistic action descriptions in pBC+ to MDP transition probabilities and rewards, and then use MDPToolBox https://pymdptoolbox.readthedocs.io for planning.
 
 ## Usage
-python pbcplus2mdp.py path/to/lpmln/files time_horizon(0 for infinite) discount_factor(0~1)
+$ python pbcplus2mdp.py path/to/lpmln/files time_horizon(0 for infinite) discount_factor(0~1)
+
+For example,
+$ python pbcplus2mdp.py block.lpmln 3 0.9
+
+Sample output can be found in examples/block.output.
 
 ## System Dependencies
 This Python script requires the following system to be installed
