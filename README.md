@@ -12,6 +12,7 @@ Sample output can be found in examples/blocks.output.
 
 ## System Dependencies
 This Python script requires the following system to be installed
+- Python 2.7
 - clingo python library: https://github.com/potassco/clingo/blob/master/INSTALL.md
 - lpmln2asp system: http://reasoning.eas.asu.edu/lpmln/index.html
 - MDPToolBox: https://pymdptoolbox.readthedocs.io/en/latest/
