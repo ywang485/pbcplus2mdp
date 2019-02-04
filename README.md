@@ -8,7 +8,7 @@ $ python pbcplus2mdp.py path/to/lpmln/files time_horizon(0 for infinite) discoun
 For example,
 $ python pbcplus2mdp.py block.lpmln 3 0.9
 
-Sample output can be found in examples/block.output.
+Sample output can be found in examples/blocks.output.
 
 ## System Dependencies
 This Python script requires the following system to be installed
