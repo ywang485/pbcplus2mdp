@@ -15,8 +15,8 @@ predicateArityDivider = '$'
 
 states = {}
 actions = {}
-transition_probs = []
-transition_rwds = []
+transition_probs = None
+transition_rwds = None
 
 def runLPMLNProgram(ipt_file, args):
 	cmd = 'lpmln2asp -i' + program + ' ' + args
@@ -133,8 +133,11 @@ def makeTransitionsStochastic():
 					s[i] = 1 - sum(s[:i])
 					break
 
-def extractTransitionInfo(answerSets):
-	transition_dict = {}
+def extractTransitionInfo(answerSets, prop_dict):
+	global transition_probs
+	global transition_rwds
+	transition_probs = np.zeros((len(actions),  len(states), len(states)))
+	transition_rwds = np.zeros((len(actions), len(states), len(states)))
 	i = 1
 	for a in answerSets:
 		ss = -1
@@ -147,45 +150,29 @@ def extractTransitionInfo(answerSets):
 				es = atom.arguments[0].number
 			elif atom.name == 'action_idx':
 				act = atom.arguments[0].number
-		k = str(ss) + ';' + str(es) + ';' + str(act)
-		if k not in transition_dict:
-			transition_dict[k] = [i]
-		else:
-			transition_dict[k].append(i)
+		transition_probs[act][ss][es] += prop_dict[i]
+		transition_rwds[act][ss][es] = extractEndStateAndUtilityFromModel(a)[1]
 		i += 1
-	return transition_dict
+	# Normalize each column
+	for ss in states:
+		for act in actions:
+			prob_sum = 0.0
+			for es in states:
+				prob_sum += transition_probs[act][ss][es]
+			for es in states:
+				transition_probs[act][ss][es] /= prob_sum
+				
+	return transition_probs, transition_rwds
 
 def extractProbs(rawOutput):
-	prob_dict = {}
 	txt = rawOutput.split('Optimization: ')[-1]
 	probabilityTexts = [x.split('\n')[0] for x in txt.split('Probability of Answer ')[1:]]
+	prob_dict = np.zeros(len(probabilityTexts) + 1)
 	for p in probabilityTexts:
 		idx = int(p.split(' ')[0].lstrip('(').rstrip(')'))
 		prob = float(p.split(' : ')[1])
 		prob_dict[idx] = prob
 	return prob_dict
-
-def getTransitionProbability(s0, s1, act, transition_dict, prob_dict):
-	k = str(s0) + ';' + str(s1) + ';' + str(act)
-	if k not in transition_dict:
-		return 0.0
-	else:
-		# Compute denomonator
-		d = 0.0
-		for sp in states:
-			kp = str(s0) + ';' + str(sp) + ';' + str(act)
-			if kp in transition_dict:
-				for a in transition_dict[str(s0) + ';' + str(sp) + ';' + str(act)]:
-					 d += prob_dict[a]
-		return sum([prob_dict[x] for x in transition_dict[k]])/d
-
-def getTransitionReward(s0, s1, act, transition_dict, answer_sets):
-	k = str(s0) + ';' + str(s1) + ';' + str(act)
-	if k not in transition_dict:
-		return 0
-	else:
-		s, u = extractEndStateAndUtilityFromModel(answer_sets[transition_dict[k][0]-1])
-	return u
 
 def constructTransitionProbabilitiesAndTransitionReward():
 	state_action_definitions = ''
@@ -201,24 +188,14 @@ def constructTransitionProbabilitiesAndTransitionReward():
 	
 	# Solve Tr(D, 1) once and collect output
 	rawOutput = runLPMLNProgram(program, '-e '+ state_action_mapping_file_name  + ' -all -clingo="-c m=1"')
+	print 'Tr(D, 1) solving finished'
 	rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
 	answerSets = [getModelFromText(x) for x in rawAnswerSets]
-	transition_dict = extractTransitionInfo(answerSets)
 	prob_dict = extractProbs(rawOutput)
-	#print transition_dict
 	#print prob_dict
-
-	# Construct transition probabilities and rewards
-	for a_idx in range(len(actions)):
-		transition_probs.append([])
-		transition_rwds.append([])
-		for s_idx in range(len(states)):
-			probs = extractEndStateProbabilitiesFromRawOutput(rawOutput)
-			transition_probs[-1].append([0] * len(states))
-			transition_rwds[-1].append([0] * len(states))
-			for s1_idx in range(len(states)):
-				transition_probs[a_idx][s_idx][s1_idx] = getTransitionProbability(s_idx, s1_idx, a_idx, transition_dict, prob_dict)
-				transition_rwds[a_idx][s_idx][s1_idx] = getTransitionReward(s_idx, s1_idx, a_idx, transition_dict, answerSets)
+	transition_props = extractTransitionInfo(answerSets, prob_dict)
+	#print transition_props
+	print 'Tranisition Probabilities and Rewards extracted.'
 		
 # Collect inputs
 program = sys.argv[1]
@@ -232,9 +209,7 @@ constructStates()
 constructActions()
 end_time = time.time()
 constructTransitionProbabilitiesAndTransitionReward()
-transition_probs = np.array(transition_probs)
-transition_rwds = np.array(transition_rwds)
-makeTransitionsStochastic()
+#makeTransitionsStochastic()
 print str(len(states)) + ' states detected.'
 print str(len(actions)) + ' actions detected.'
 print 'Transition Probabilitities: '
@@ -247,6 +222,7 @@ for a_idx in actions:
 	print transition_rwds[a_idx]
 lpmln_solving_time = end_time - start_time
 start_time = time.time()
+print 'Start solving MDP with mdptoolbox...'
 if time_horizon > 0:
 	fh = mdptoolbox.mdp.FiniteHorizon(transition_probs, transition_rwds, discount, time_horizon, True)
 	fh.run()
