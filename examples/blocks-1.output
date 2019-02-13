@@ -1,0 +1,134 @@
+Action Description in lpmln:  examples/blocks.lpmln
+Time Horizon:  10
+Tr(D, 1) solving finished
+Tranisition Probabilities and Rewards extracted.
+2 states detected.
+4 actions detected.
+Transition Probabilitities: 
+action 0 act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 1.  0.]
+ [ 0.  1.]]
+action 1 act_StackOn(b1,b1,t,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 1.  0.]
+ [ 0.  1.]]
+action 2 act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+[[ 1.         0.       ]
+ [ 0.8000009  0.1999991]]
+action 3 act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 0.1999991  0.8000009]
+ [ 0.         1.       ]]
+Transition Rewards: 
+action 0 act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 0.  0.]
+ [ 0.  0.]]
+action 1 act_StackOn(b1,b1,t,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 0.  0.]
+ [ 0.  0.]]
+action 2 act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+[[-1.  0.]
+ [ 9. -1.]]
+action 3 act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+[[-1. -1.]
+ [ 0. -1.]]
+Start solving MDP with mdptoolbox...
+Raw Optimal Policy Output: 
+[[3 3 3 3 3 3 3 3 3 0]
+ [2 2 2 2 2 2 2 2 2 2]]
+Optimal Policy: 
+-------------------------- Time step 0 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 1 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 2 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 3 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 4 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 5 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 6 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 7 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 8 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+-------------------------- Time step 9 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_At(b1,l2,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_At(b1,l1,0),fl_Above(b1,b1,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_MoveTo(b1,l1,f,0)
+
+
+lpmln solving time:  0.983755111694
+MDP solving time: 0.000924110412598
+
+real    0m1.427s
+user    0m1.217s
+sys     0m0.214s
+

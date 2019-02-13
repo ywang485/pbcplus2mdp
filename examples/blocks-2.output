@@ -1,0 +1,521 @@
+Action Description in lpmln:  examples/blocks.lpmln
+Time Horizon:  10
+Tr(D, 1) solving finished
+Tranisition Probabilities and Rewards extracted.
+8 states detected.
+9 actions detected.
+Transition Probabilitities: 
+action 0 act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 1.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]]
+action 1 act_StackOn(b1,b1,t,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 1.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]]
+action 2 act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,t,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 1.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]]
+action 3 act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]]
+action 4 act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+[[ 1.         0.         0.         0.         0.         0.         0.         0.       ]
+ [ 0.8000009  0.1999991  0.         0.         0.         0.         0.         0.       ]
+ [ 0.         0.         1.         0.         0.         0.         0.         0.       ]
+ [ 0.         0.         0.8000009  0.1999991  0.         0.         0.         0.       ]
+ [ 0.         0.         0.         0.         1.         0.         0.         0.       ]
+ [ 0.         0.         0.8000009  0.         0.         0.1999991  0.         0.       ]
+ [ 0.         0.         0.         0.         0.         0.         1.         0.       ]
+ [ 0.         0.         0.         0.         0.         0.         0.8000009
+   0.1999991]]
+action 5 act_StackOn(b2,b1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  1.]]
+action 6 act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[ 1.         0.         0.         0.         0.         0.         0.         0.       ]
+ [ 0.         1.         0.         0.         0.         0.         0.         0.       ]
+ [ 0.8000009  0.         0.1999991  0.         0.         0.         0.         0.       ]
+ [ 0.         0.8000009  0.         0.1999991  0.         0.         0.         0.       ]
+ [ 0.         0.         0.         0.         1.         0.         0.         0.       ]
+ [ 0.         0.         0.         0.         0.8000009  0.1999991  0.         0.       ]
+ [ 0.         0.         0.         0.         0.         0.         1.         0.       ]
+ [ 0.         0.8000009  0.         0.         0.         0.         0.
+   0.1999991]]
+action 7 act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.1999991  0.         0.8000009  0.         0.         0.         0.         0.       ]
+ [ 0.         0.1999991  0.         0.8000009  0.         0.         0.         0.       ]
+ [ 0.         0.         1.         0.         0.         0.         0.         0.       ]
+ [ 0.         0.         0.         1.         0.         0.         0.         0.       ]
+ [ 0.         0.         0.         0.         0.1999991  0.8000009  0.         0.       ]
+ [ 0.         0.         0.         0.         0.         1.         0.         0.       ]
+ [ 0.         0.         0.8000009  0.         0.         0.         0.1999991
+   0.       ]
+ [ 0.         0.         0.         0.         0.         0.         0.         1.       ]]
+action 8 act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.1999991  0.8000009  0.         0.         0.         0.         0.         0.       ]
+ [ 0.         1.         0.         0.         0.         0.         0.         0.       ]
+ [ 0.         0.         0.1999991  0.8000009  0.         0.         0.         0.       ]
+ [ 0.         0.         0.         1.         0.         0.         0.         0.       ]
+ [ 0.         0.8000009  0.         0.         0.1999991  0.         0.         0.       ]
+ [ 0.         0.         0.         0.         0.         1.         0.         0.       ]
+ [ 0.         0.         0.         0.         0.         0.         0.1999991
+   0.8000009]
+ [ 0.         0.         0.         0.         0.         0.         0.         1.       ]]
+Transition Rewards: 
+action 0 act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]]
+action 1 act_StackOn(b1,b1,t,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]]
+action 2 act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,t,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]]
+action 3 act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]]
+action 4 act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+[[-1.  0.  0.  0.  0.  0.  0.  0.]
+ [ 9. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0. -1.  0.  0.  0.  0.  0.]
+ [ 0.  0. -1. -1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0. -1.  0.  0.  0.]
+ [ 0.  0. -1.  0.  0. -1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  9. -1.]]
+action 5 act_StackOn(b2,b1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.]]
+action 6 act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+[[-1.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 9.  0. -1.  0.  0.  0.  0.  0.]
+ [ 0. -1.  0. -1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  9. -1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0. -1.  0.  0.  0.  0.  0. -1.]]
+action 7 act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[-1.  0. -1.  0.  0.  0.  0.  0.]
+ [ 0. -1.  0. -1.  0.  0.  0.  0.]
+ [ 0.  0. -1.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0. -1. -1.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1.  0.  0.]
+ [ 0.  0. -1.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0. -1.]]
+action 8 act_MoveTo(b1,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+[[-1. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0. -1. -1.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.]
+ [ 0. -1.  0.  0. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0. -1. -1.]
+ [ 0.  0.  0.  0.  0.  0.  0. -1.]]
+Start solving MDP with mdptoolbox...
+Raw Optimal Policy Output: 
+[[7 7 7 7 7 7 7 7 7 0]
+ [4 4 4 4 4 4 4 4 4 4]
+ [6 6 6 6 6 6 6 6 6 6]
+ [3 3 3 3 3 3 3 3 3 0]
+ [7 7 7 7 7 7 7 7 7 0]
+ [6 6 6 6 6 6 6 6 6 6]
+ [7 7 7 7 7 7 7 7 7 0]
+ [4 4 4 4 4 4 4 4 4 4]]
+Optimal Policy: 
+-------------------------- Time step 0 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 1 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 2 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 3 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 4 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 5 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 6 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 7 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 8 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l1,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+-------------------------- Time step 9 ---------------------------------:
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l2,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,t,0),fl_TopClear(b2,f,0),fl_Above(b1,b2,t,0),fl_OnTopOf(b1,b2,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b2,b1,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b2,b1,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b2,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l2,0),fl_At(b2,l2,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(f,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b1,l2,f,0),act_MoveTo(b2,l2,f,0)
+
+
+state:  fl_TopClear(b1,f,0),fl_TopClear(b2,t,0),fl_Above(b2,b1,t,0),fl_OnTopOf(b2,b1,t,0),fl_At(b1,l1,0),fl_At(b2,l1,0),fl_Above(b1,b1,f,0),fl_Above(b1,b2,f,0),fl_Above(b2,b2,f,0),fl_GoalNotAchieved(t,0),fl_OnTopOf(b1,b1,f,0),fl_OnTopOf(b1,b2,f,0),fl_OnTopOf(b2,b2,f,0)
+action:  act_MoveTo(b1,l2,t,0),act_StackOn(b1,b1,f,0),act_StackOn(b2,b1,f,0),act_StackOn(b1,b2,f,0),act_StackOn(b2,b2,f,0),act_MoveTo(b1,l1,f,0),act_MoveTo(b2,l1,f,0),act_MoveTo(b2,l2,f,0)
+
+
+lpmln solving time:  1.03233790398
+MDP solving time: 0.000817060470581
+
+real    0m1.516s
+user    0m1.303s
+sys     0m0.222s

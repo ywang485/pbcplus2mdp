@@ -207,8 +207,8 @@ print 'Action Description in lpmln: ', program
 print 'Time Horizon: ', time_horizon
 constructStates()
 constructActions()
-end_time = time.time()
 constructTransitionProbabilitiesAndTransitionReward()
+end_time = time.time()
 #makeTransitionsStochastic()
 print str(len(states)) + ' states detected.'
 print str(len(actions)) + ' actions detected.'
