@@ -21,7 +21,7 @@ door(left; right).
 
 % Utility Laws
 utility(10, I+1, D1, D2) :- fl_TigerPosition(D1, I+1), act_OpenDoor(D2, t, I), D1 != D2.
-utility(-100, I+1, D) :- fl_TigerPosition(D, I+1), act_OpenDoor(D, t, I).
+utility(-10, I+1, D) :- fl_TigerPosition(D, I+1), act_OpenDoor(D, t, I).
 
 % Observation Laws
 obs_TigerPositionObserved(D, I+1) :- fl_TigerPosition(D, I+1), act_Listen(t, I), pf_Listen(t, I).
