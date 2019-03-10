@@ -175,8 +175,11 @@ def extractTransitionInfo(answerSets, prop_dict):
 			prob_sum = 0.0
 			for obs in range(len(observations)):
 				prob_sum += observation_probs[act][es][obs]
-			for obs in range(len(observations)):
-				observation_probs[act][es][obs] /= prob_sum
+			if prob_sum != 0.0:
+				for obs in range(len(observations)):
+					observation_probs[act][es][obs] /= prob_sum
+			else:
+				observation_probs[act][es][0] = 1.0
 
 def constructTransitionProbabilitiesAndTransitionRewardAndObservationProbabilities():
 	state_action_obs_definitions = ''
@@ -186,7 +189,7 @@ def constructTransitionProbabilitiesAndTransitionRewardAndObservationProbabiliti
 		state_action_obs_definitions += 'start_state(' + str(s_idx) + ') :- ' + model2conjunction(setTimestep(states[s_idx], 0)) + '.\n'
 	for a_idx in range(len(actions)):
 		state_action_obs_definitions += 'action_idx(' + str(a_idx)+ ') :- ' + model2conjunction(setTimestep(actions[a_idx], 0)) + '.\n'
-	for obs_idx in range(len(states)):
+	for obs_idx in range(len(observations)):
 		state_action_obs_definitions += 'obs_idx(' + str(obs_idx) + ') :- ' + model2conjunction(setTimestep(observations[obs_idx], 1)) + '.\n'
 	out = open(state_action_obs_mapping_file_name, 'w')
 	out.write(state_action_obs_definitions)
@@ -246,7 +249,7 @@ def createPOMDPFile():
 program = sys.argv[1]
 #time_horizon = int(sys.argv[2])
 discount = float(sys.argv[2])
-pomdp_file_name = program.split('.')[0] + '.pomdp'
+pomdp_file_name = program.split('/')[-1].split('.')[0] + '.pomdp'
 
 start_time = time.time()
 print 'Action Description in lpmln: ', program
