@@ -26,6 +26,10 @@ location(l1; l2).
 :- pf_Move(t, I), pf_Move(f, I).
 :- not pf_Move(t, I), not pf_Move(f, I), astep(I).
 
+:- fl_BotTower(X, t, I), fl_BotTower(X, f, I).
+:- not fl_BotTower(X, t, I), not fl_BotTower(X, f, I), block(X), step(I).
+
+
 % ---------- PF(D) ----------
 %% Probability Distribution
 @log(0.8) pf_Move(t, I) :- astep(I).
@@ -56,6 +60,10 @@ fl_At(X1, L, I) :- fl_Above(X1, X2, t, I), fl_At(X2, L, I).
 fl_Above(X1, X2, f, I) :- not fl_Above(X1, X2, t, I), block(X1), block(X2), step(I). 
 fl_TopClear(X, f, I) :- fl_OnTopOf(X1, X, t, I).
 fl_TopClear(X, t, I) :- not fl_TopClear(X, f, I), block(X), step(I).
+
+fl_BotTower(X, t, I) :- not not fl_BotTower(X, t, I), step(I), block(X).
+fl_BotTower(X1, f, I) :- fl_OnTopOf(X1, X, t, I).
+:- step(I), not {fl_BotTower(X, t, I):fl_At(X, l2, I)}2.
 
 %% Fluent Dynamic Laws
 fl_At(X, L, I+1) :- act_MoveTo(X, L, t, I), pf_Move(t, I), fl_GoalNotAchieved(t, I).
