@@ -14,6 +14,7 @@ fluent_project_file_name = 'tmp_fluent_project.lp'
 observation_project_file_name = 'tmp_observation_project.lp'
 state_obs_mapping_file_name = 'tmp_state_action_obs_mapping.lp'
 predicateArityDivider = '$'
+init_program = None
 
 states = []
 action2name = []
@@ -269,8 +270,20 @@ def createPOMDPFile():
 	out_pomdp.write('states: ' + str(len(states)) + '\n')
 	out_pomdp.write('actions: ' + str(next_action_idx) + '\n')
 	out_pomdp.write('observations: ' + str(len(observations)) + '\n')
-	out_pomdp.write('start: uniform \n')
-	# todo: generate initial state probability distribution
+	# Generate initial state probability distribution
+	if init_program == None:
+		out_pomdp.write('start: uniform \n')
+	else:
+		out_pomdp.write('start: \n')
+		rawOutput = runLPMLNProgram(init_program, '-e '+ state_action_obs_mapping_file_name  + ' -all')
+		print 'D_init solving finished'
+		rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
+		answerSets = [getModelFromText(x) for x in rawAnswerSets]
+		prob_dict = extractProbs(rawOutput)
+		init_probs = extractInitStateInfo(answerSets, prob_dict)
+		print 'initial belief state:', init_probs
+		for i in range(len(init_probs)):
+			out_pomdp.write(str(init_probs[i]) + ' ')
 	out_pomdp.write('\n')
 	for a_idx in range(next_action_idx):
 		for ss_idx in range(len(states)):
@@ -295,6 +308,9 @@ action_dir = sys.argv[2]
 #time_horizon = int(sys.argv[2])
 discount = float(sys.argv[3])
 pomdp_file_name = program.split('/')[-1].split('.')[0] + '.pomdp'
+if len(sys.argv) >= 4:
+	init_program = sys.argv[3]
+
 
 start_time = time.time()
 print 'Action Description in lpmln: ', program

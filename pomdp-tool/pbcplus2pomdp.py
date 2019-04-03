@@ -13,6 +13,7 @@ fluent_project_file_name = 'tmp_fluent_project.lp'
 observation_project_file_name = 'tmp_observation_project.lp'
 state_action_obs_mapping_file_name = 'tmp_state_action_obs_mapping.lp'
 predicateArityDivider = '$'
+init_program = None
 
 states = []
 actions = []
@@ -136,6 +137,18 @@ def extractUtilityFromModel(model):
 			utility += atom.arguments[0].number
 	return utility
 
+def extractInitStateInfo(answerSets, prob_dict):
+	init_probs = np.zeros(len(states))
+	i = 1
+	for a in answerSets:
+		s = -1
+		for atom in a:
+			if atom.name == 'start_state':
+				s = atom.arguments[0].number
+		init_probs[s] += prob_dict[i]
+		i += 1
+	return init_probs
+
 def extractTransitionInfo(answerSets, prop_dict):
 	global transition_probs
 	global transition_rwds
@@ -195,9 +208,9 @@ def constructTransitionProbabilitiesAndTransitionRewardAndObservationProbabiliti
 	out.write(state_action_obs_definitions)
 	out.close()
 	
-	# Solve Tr(D, 1) once and collect output
+	# Solve D_1 once and collect output
 	rawOutput = runLPMLNProgram(program, '-e '+ state_action_obs_mapping_file_name  + ' -all -clingo="-c m=1"')
-	print 'Tr(D, 1) solving finished'
+	print 'D_1 solving finished'
 	rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
 	answerSets = [getModelFromText(x) for x in rawAnswerSets]
 	prob_dict = extractProbs(rawOutput)
@@ -225,8 +238,21 @@ def createPOMDPFile():
 	out_pomdp.write('states: ' + str(len(states)) + '\n')
 	out_pomdp.write('actions: ' + str(len(actions)) + '\n')
 	out_pomdp.write('observations: ' + str(len(observations)) + '\n')
-	out_pomdp.write('start: uniform \n')
-	# todo: generate initial state probability distribution
+	# Generate initial state probability distribution
+	if init_program == None:
+		out_pomdp.write('start: uniform \n')
+	else:
+		out_pomdp.write('start: \n')
+		rawOutput = runLPMLNProgram(init_program, '-e '+ state_action_obs_mapping_file_name  + ' -all')
+		print 'D_init solving finished'
+		rawAnswerSets = [x.split('\n')[1].lstrip(' ').lstrip('\n').lstrip('\r') for x in rawOutput.split('Answer: ')[1:]]
+		answerSets = [getModelFromText(x) for x in rawAnswerSets]
+		prob_dict = extractProbs(rawOutput)
+		init_probs = extractInitStateInfo(answerSets, prob_dict)
+		print 'initial belief state:', init_probs
+		for i in range(len(init_probs)):
+			out_pomdp.write(str(init_probs[i]) + ' ')
+
 	out_pomdp.write('\n')
 	for a_idx in range(len(actions)):
 		for ss_idx in range(len(states)):
@@ -249,6 +275,8 @@ def createPOMDPFile():
 program = sys.argv[1]
 #time_horizon = int(sys.argv[2])
 discount = float(sys.argv[2])
+if len(sys.argv) >= 4:
+	init_program = sys.argv[3]
 pomdp_file_name = program.split('/')[-1].split('.')[0] + '.pomdp'
 
 start_time = time.time()

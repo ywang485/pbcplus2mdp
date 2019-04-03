@@ -1,0 +1,15 @@
+% UEC
+:- fl_TigerPosition(left, 0), fl_TigerPosition(right, 0).
+:- not fl_TigerPosition(left, 0), not fl_TigerPosition(right, 0).
+:- init_TigerPosition(left), init_TigerPosition(right).
+:- not init_TigerPosition(left), not init_TigerPosition(right).
+
+% Probability Distribution
+@log(0.6) init_TigerPosition(left).
+@log(0.4) init_TigerPosition(right). 
+
+% Initial Laws
+:- not fl_TigerPosition(X, 0), init_TigerPosition(X).
+
+% Initial values of fluents are exogenous
+{fl_TigerPosition(left, 0); fl_TigerPosition(right, 0)}.
