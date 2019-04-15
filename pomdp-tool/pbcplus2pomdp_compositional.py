@@ -308,8 +308,8 @@ action_dir = sys.argv[2]
 #time_horizon = int(sys.argv[2])
 discount = float(sys.argv[3])
 pomdp_file_name = program.split('/')[-1].split('.')[0] + '.pomdp'
-if len(sys.argv) >= 4:
-	init_program = sys.argv[3]
+if len(sys.argv) >= 5:
+	init_program = sys.argv[4]
 
 
 start_time = time.time()
@@ -324,6 +324,7 @@ transition_rwds = np.zeros((0, len(states), len(states)))
 observation_probs = np.zeros((0, len(states), len(observations)))
 for act_file in os.listdir(action_dir):
 	if act_file.endswith('.lpmln'):
+		print 'Processing file', act_file
 		createStateObservationDefinitions()
 		constructTransitionProbabilitiesAndTransitionRewardAndObservationProbabilities(os.path.join(action_dir, act_file))
 print 'Making matrices stochastic...'
