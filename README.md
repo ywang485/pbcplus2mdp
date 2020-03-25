@@ -1,5 +1,7 @@
 # pbcplus2mdp
 
+[![DOI](https://zenodo.org/badge/164947167.svg)](https://zenodo.org/badge/latestdoi/164947167)
+
 A python script that translates probabilistic action descriptions in pBC+ to MDP transition probabilities and rewards, and then use MDPToolBox https://pymdptoolbox.readthedocs.io for planning.
 
 ## Usage
